@@ -1,0 +1,13 @@
+Name,,ID,Health,,Phys Dmg Neg,,Strike Dmg Neg,,Slash Dmg Neg,,Pierce Dmg Neg,,Magic Dmg Neg,,Fire Dmg Neg,,Ltng Dmg Neg	,,Holy Dmg Neg,,,Poison Resist,Rot Resist,Bleed Resist,Frost Resist,Sleep Resist,Madness Resist,Blight Resist,Poise
+"Gladius, Beast of Night",,75000020,22656,,100,0,100,0,100,0,100,-10,100,0,100,50,100,0,100,-35,,542,252,252,542,154,Immune,Immune,218.18
+"Adel, Baron of Night",,75100020,26280,,100,0,100,0,100,0,100,0,100,0,100,20,100,50,100,0,,154,154,542,154,154,Immune,Immune,272.72
+"Gnoster, Wisdom of Night (Moth)",,75200020,26054,,100,-15,100,-15,100,-25,100,-25,100,50,100,-40,100,10,100,10,,542,154,154,154,542,Immune,Immune,181.81
+"Gnoster, Wisdom of Night (Pest)",,75300020,26054,,100,10,100,-20,100,20,100,-10,100,10,100,-35,100,10,100,10,,252,154,154,154,154,Immune,Immune,272.72
+"Maris, Fathom of Night",,75400020,25374,,100,0,100,20,100,-15,100,10,100,20,100,50,100,-40,100,15,,Immune,252,Immune,252,Immune,Immune,Immune,272.72
+"Libra, Creature of Night",,75600020,26096,,100,0,100,0,100,-10,100,0,100,20,100,-20,100,0,100,-35,,154,154,252,252,Immune,154,Immune,218.18
+"Fulghor, Champion of Nightglow",,76000010,23788,,100,0,100,0,100,0,100,0,100,0,100,0,100,-20,100,30,,154,154,154,154,154,Immune,Immune,281.81
+"Caligo, Miasma of Night",,49000010,24016,,100,0,100,-15,100,15,100,10,100,20,100,-35,100,20,100,20,,252,252,252,542,542,Immune,Immune,290.9
+The Shape of Night,,75800010,9970,,100,0,100,10,100,-15,100,-10,100,0,100,-20,100,0,100,-35,,Immune,252,Immune,Immune,542,Immune,Immune,236.36
+Heolstor the Nightlord,,75802010,20392,,100,0,100,-10,100,10,100,-15,100,0,100,0,100,-20,100,-30,,Immune,252,Immune,Immune,542,Immune,Immune,236.36
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Average,,,25578,,100,0,100,-2,100,-2,100,-3,100,11,100,2,100,1,100,-3,,276,203,268,292.8571429,316,154,Immune,252
