@@ -1,20 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import Timer from "@/components/Timer";
-import BossSelector from "@/components/BossSelector";
-import BossInfoPanel from "@/components/BossInfoPanel";
-import { Boss } from "@/types";
+import BossSection from "@/components/BossSection";
 import { BOSSES } from "@/constants";
 
 export default function Home() {
-  const [selectedBoss, setSelectedBoss] = useState<Boss | null>(BOSSES[0]);
-  const [showBossInfo, setShowBossInfo] = useState(true);
-
-  const handleSelectBoss = (boss: Boss) => {
-    setSelectedBoss(boss);
-    setShowBossInfo(true);
-  };
 
   return (
     <main className="min-h-screen relative z-10">
@@ -29,30 +19,10 @@ export default function Home() {
         <Timer />
 
         {/* Boss Information Section */}
-        <div className="glass rounded-2xl p-6 backdrop-blur-md border border-white/10 mb-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-6">
-            {/* Boss Selector */}
-            <BossSelector 
-              bosses={BOSSES}
-              selectedBoss={selectedBoss}
-              onSelectBoss={handleSelectBoss}
-            />
-
-            {/* Boss Info Panel */}
-            <BossInfoPanel 
-              boss={selectedBoss}
-              show={showBossInfo}
-            />
-          </div>
+        <div className="mb-8">
+          <BossSection bosses={BOSSES} />
         </div>
 
-        {/* Bottom Content Area - Placeholder for future features */}
-        <div className="glass rounded-2xl p-8 backdrop-blur-md border border-white/10">
-          <div className="text-center text-gray-400">
-            <p className="text-lg mb-2">More features coming soon</p>
-            <p className="text-sm">Spreadsheet data • Wiki links • Build guides • And more...</p>
-          </div>
-        </div>
       </div>
 
       <style jsx>{`

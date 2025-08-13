@@ -16,96 +16,21 @@ export default function BossInfoPanel({ boss, show }: BossInfoPanelProps) {
   return (
     <div className="transition-all opacity-100">
       <div className="p-6 bg-black/30 rounded-xl border border-purple-500/30 h-full">
-        {/* Boss Header with Weakness Icons */}
-        <div className="flex justify-between items-start mb-4">
-          <div className="flex-1">
-            <h3 className="text-xl font-bold text-yellow-400">
-              {boss.name} <span className="text-gray-300 text-lg font-normal">({boss.altName})</span>
-            </h3>
-            {boss.title && <p className="text-gray-400 text-sm mt-1">{boss.title}</p>}
-          </div>
-          
-          {/* Weakness Icons */}
-          {boss.negations && (
-            <div className="flex items-center gap-1">
-              <span className="text-xs text-green-400 mr-2">Weak:</span>
-              {Object.entries(boss.negations)
-                .filter(([_, value]) => value < 0)
-                .map(([type, value]) => (
-                  <div key={type} className="relative group">
-                    <img 
-                      src={getImagePath(type)} 
-                      alt={type}
-                      className="w-6 h-6 object-contain"
-                    />
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 px-2 py-1 bg-gray-900 text-xs text-white rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
-                      {type}: {value}%
-                    </div>
-                  </div>
-                ))}
+        {/* Health and Poise Stats */}
+        <div className="flex gap-6 mb-6">
+          {boss.health && (
+            <div>
+              <span className="text-sm text-gray-400">Health:</span>
+              <span className="ml-2 font-semibold text-lg">{boss.health.toLocaleString()}</span>
+            </div>
+          )}
+          {boss.poise && (
+            <div>
+              <span className="text-sm text-gray-400">Poise:</span>
+              <span className="ml-2 font-semibold text-lg">{boss.poise}</span>
             </div>
           )}
         </div>
-
-        {/* Health/Poise with Resistance Icons */}
-        <div className="flex justify-between items-center mb-4">
-          <div className="flex gap-6">
-            {boss.health && (
-              <div>
-                <span className="text-sm text-gray-400">Health:</span>
-                <span className="ml-2 font-semibold">{boss.health.toLocaleString()}</span>
-              </div>
-            )}
-            {boss.poise && (
-              <div>
-                <span className="text-sm text-gray-400">Poise:</span>
-                <span className="ml-2 font-semibold">{boss.poise}</span>
-              </div>
-            )}
-          </div>
-          
-          {/* Resistance and Immunity Icons */}
-          {(boss.negations || boss.resistances) && (
-            <div className="flex items-center gap-1">
-              <span className="text-xs text-red-400 mr-2">Resist:</span>
-              
-              {/* Damage Resistances */}
-              {boss.negations && Object.entries(boss.negations)
-                .filter(([_, value]) => value > 20)
-                .map(([type, value]) => (
-                  <div key={type} className="relative group">
-                    <img 
-                      src={getImagePath(type)} 
-                      alt={type}
-                      className="w-6 h-6 object-contain opacity-75"
-                    />
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 px-2 py-1 bg-gray-900 text-xs text-white rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
-                      {type}: +{value}%
-                    </div>
-                  </div>
-                ))}
-              
-              {/* Status Immunities with red outline */}
-              {boss.resistances && Object.entries(boss.resistances)
-                .filter(([_, value]) => value === 'Immune' || (typeof value === 'number' && value > 400))
-                .map(([type, _value]) => (
-                  <div key={type} className="relative group">
-                    <img 
-                      src={getImagePath(type)} 
-                      alt={type}
-                      className="w-6 h-6 object-contain ring-2 ring-red-500 rounded"
-                    />
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 px-2 py-1 bg-gray-900 text-xs text-white rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
-                      IMMUNE TO {type.toUpperCase()}
-                    </div>
-                  </div>
-                ))}
-            </div>
-          )}
-        </div>
-
-        {/* Separator */}
-        <div className="border-t border-gray-700/50 my-4"></div>
 
         {/* Boss Info Grid */}
         <div className="space-y-4">

@@ -36,10 +36,7 @@ export default function BossSelector({ bosses, selectedBoss, onSelectBoss }: Bos
           {/* Content */}
           <div className="absolute bottom-0 left-0 right-0 z-10 p-3 text-left">
             <div className="font-semibold text-base text-white drop-shadow-lg">
-              {boss.name}
-            </div>
-            <div className="text-xs text-gray-200 mt-0.5 drop-shadow-md">
-              {boss.altName}
+              {boss.name} {boss.altName && <span className="font-normal text-sm">({boss.altName})</span>}
             </div>
             {boss.title && (
               <div className="text-xs text-gray-300 mt-0.5 drop-shadow-md">{boss.title}</div>
