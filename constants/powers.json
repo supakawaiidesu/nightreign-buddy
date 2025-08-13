@@ -1,0 +1,214 @@
+[
+  {
+    "powers": [
+      {
+        "name": "All Resistances Up",
+        "effect": "- +57/ +75\n- Raises resistance to all ailments"
+      },
+      {
+        "name": "Area of Darkness Conceals Caster While Walking",
+        "effect": "- Become difficult to spot and silence footsteps"
+      },
+      {
+        "name": "Attack Boost [Dragons]",
+        "effect": "- Enhances attacks against dragons and ancient dragons (including Adel, Baron of Night) +20%"
+      },
+      {
+        "name": "Attack Boost [Lifeforms Born of Falling Stars]",
+        "effect": "- Enhances attacks against blockers lifeforms born of falling stars +20%"
+      },
+      {
+        "name": "Attack Boost [Those Who Live in Death]",
+        "effect": "- Enhances attacks against Those Who Live in Death +20%"
+      },
+      {
+        "name": "Creates Holy Ground at Low HP",
+        "effect": "- At low HP, create holy ground, slowly restore HP, and improve defense"
+      },
+      {
+        "name": "Critical Hit FP Restoration",
+        "effect": "- Critical hits restore FP +10%"
+      },
+      {
+        "name": "Critical Hit HP Restoration",
+        "effect": "- Critical hits restore HP +10%"
+      },
+      {
+        "name": "Dragonwound upon Dragon Communion",
+        "effect": "- Dragon Communion incantations add anti-dragon effect to armament"
+      },
+      {
+        "name": "Flame of Frenzy While Walking",
+        "effect": "- Causes the yellow flame of frenzy to violently burst forth"
+      },
+      {
+        "name": "FP Recovery upon Successful Guards",
+        "effect": "- Restores FP upon guarding +2"
+      },
+      {
+        "name": "FP Restoration upon Successive Attacks",
+        "effect": "- +5%/ +10%\n- Successive attacks restore FP"
+      },
+      {
+        "name": "Gradual Restoration by Flask",
+        "effect": "- Flask slowly restores HP"
+      },
+      {
+        "name": "Guard Counters Activate Holy Attacks",
+        "effect": "- Guard counters trigger holy bursts"
+      },
+      {
+        "name": "Guard Counters Activate Summoning Attack",
+        "effect": "- Activation summons a group of Those Lost in Death that attack enemies"
+      },
+      {
+        "name": "HP Recovery upon Successful Guards",
+        "effect": "- Restores HP upon guarding +10"
+      },
+      {
+        "name": "HP Restoration upon Successive Attacks",
+        "effect": "- Successive attacks restore HP +3"
+      },
+      {
+        "name": "Ice Storm Surge Sprint",
+        "effect": "- Produces ice storm at the starting point of surge sprint"
+      },
+      {
+        "name": "Improved Affinity Attack Power",
+        "effect": "- +5%/ +8%\n- Raises attacks of magic, fire, lightning, holy affinities"
+      },
+      {
+        "name": "Improved Affinity Damage Negation",
+        "effect": "- +12%/ +15%/ +18%\n- Boosts magic, fire, lightning, and holy damage negation"
+      },
+      {
+        "name": "Improved Dodging",
+        "effect": "- Longer invincibility windows during evasive maneuvers"
+      },
+      {
+        "name": "Improved Flask HP Restoration",
+        "effect": "- +20%/ +30%\n- Boosts HP Restoration from flasks"
+      },
+      {
+        "name": "Improved Perfuming Arts",
+        "effect": "- Raises potency of items employing perfume +20%"
+      },
+      {
+        "name": "Improved Physical Attack power",
+        "effect": "- +6%/ +9%\n- Raises Physical attack"
+      },
+      {
+        "name": "Improved Physical Damage Negation",
+        "effect": "- +12%/ +15%/ +18%\n- Boosts physical damage negation"
+      },
+      {
+        "name": "Improved Poise",
+        "effect": "- +25% / +38%\n- Raises poise"
+      },
+      {
+        "name": "Improved Roar & Breath Attacks",
+        "effect": "- Enhances roars and breath attacks +20%"
+      },
+      {
+        "name": "Improved Sorceries & Incantations",
+        "effect": "- Raises potency of sorceries and incantations +7%"
+      },
+      {
+        "name": "Improved Stamina Recovery",
+        "effect": "- +4/ +6\n- Raises stamina recovery speed"
+      },
+      {
+        "name": "Improved Stance-Breaking",
+        "effect": "- +10%/ +15%\n- Attacks more likely to break stance of enemies"
+      },
+      {
+        "name": "Improved Throwing Pots",
+        "effect": "- Raises potency of throwing pots +20%"
+      },
+      {
+        "name": "Improved Thrusting Counterattack",
+        "effect": "- Enhances counterattacks unique to thrusting weapons +20%"
+      },
+      {
+        "name": "Improved Ultimate Art Gauge Charge Speed",
+        "effect": "- Improves the charging speed of Ultimate Art gauge +6%"
+      },
+      {
+        "name": "Increased Enemy Damage after Critical Hit",
+        "effect": "- +15%\n- Critical hits increased damage inflicted upon enemies"
+      },
+      {
+        "name": "Increased Maximum FP",
+        "effect": "- +10%/ +15%\n- Maximum FP raised"
+      },
+      {
+        "name": "Increased Maximum HP",
+        "effect": "- +10%/ +15%\n- Maximum HP raised"
+      },
+      {
+        "name": "Increased Maximum Stamina",
+        "effect": "- +10%/ +15%\n- Maximum stamina raised"
+      },
+      {
+        "name": "Increased Rune Acquisition",
+        "effect": "- Increases number of runes obtained +10%"
+      },
+      {
+        "name": "Increased Sorcery & Incantation Duration",
+        "effect": "- +30%\n- Extends spell effect duration."
+      },
+      {
+        "name": "Inflict Blood Loss at Low HP",
+        "effect": "- Armament inflicts blood loss when HP is low"
+      },
+      {
+        "name": "Lightning upon Dodging",
+        "effect": "- Evasive maneuvers strike surroundings with lightning"
+      },
+      {
+        "name": "More Runes From Defeated Enemies",
+        "effect": "- Increased number of runes obtained +10%"
+      },
+      {
+        "name": "Periodical Giant Glintblade",
+        "effect": "- Glintblade automatically attacks nearby foes\n- Creates a glintblade which automatically attack nearby foes at regular intervals"
+      },
+      {
+        "name": "Poison & Rot Trigger Continuous HP Recovery",
+        "effect": "- +7\n- Poisoning or Scarlet Rot in vicinity continuously restores HP."
+      },
+      {
+        "name": "Reduced FP Consumption",
+        "effect": "- +10%/ +15%\n- Lowers FP consumption"
+      },
+      {
+        "name": "Rune of the Strong",
+        "effect": "- Gain 10000/20000/30000 Runes"
+      },
+      {
+        "name": "Successful Parries Activate Golden Retaliation",
+        "effect": "- Parry to dispel incoming sorceries and incantations, retaliating with golden power"
+      },
+      {
+        "name": "Sudden Enemy Death upon Attacks",
+        "effect": "- Attacked enemies die regardless of remaining HP on rare occasions"
+      },
+      {
+        "name": "Violent Deluge of Star Rain While Walking",
+        "effect": "- Summons a dark cloud of stars overhead that releases a violent deluge of star rain"
+      },
+      {
+        "name": "Wending Grace",
+        "effect": "- Rise from defeat a single time."
+      },
+      {
+        "name": "Character Skill Cooldown Reduction",
+        "effect": "- +10%\n- Shortens Character Skill Cooldown time"
+      },
+      {
+        "name": "Blood Loss in Vicinity Increases Attack Power",
+        "effect": "- +20%\n- Nearby blood loss increases attack power"
+      }
+    ]
+  }
+]
