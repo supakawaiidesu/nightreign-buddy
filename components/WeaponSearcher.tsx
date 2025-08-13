@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import { WeaponScaling, getWeaponRecommendation, getScalingColor } from '@/utils/weaponData';
-import { Search, HelpCircle } from 'lucide-react';
+import { Search, HelpCircle, ChevronDown } from 'lucide-react';
 
 interface WeaponSearcherProps {
   weapons: WeaponScaling[];
@@ -14,6 +14,8 @@ export default function WeaponSearcher({ weapons }: WeaponSearcherProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [showTooltip, setShowTooltip] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
+  const [sortBy, setSortBy] = useState<string>('default');
+  const [showSortDropdown, setShowSortDropdown] = useState(false);
 
   // Auto-expand when user starts searching
   useEffect(() => {
@@ -22,12 +24,23 @@ export default function WeaponSearcher({ weapons }: WeaponSearcherProps) {
     }
   }, [searchTerm, isMinimized]);
 
-  const filteredWeapons = useMemo(() => {
-    return weapons.filter(weapon => 
+  const filteredAndSortedWeapons = useMemo(() => {
+    let filtered = weapons.filter(weapon => 
       weapon.weapon.toLowerCase().includes(searchTerm.toLowerCase()) ||
       (weapon.hasStatus && weapon.hasStatus.toLowerCase().includes(searchTerm.toLowerCase()))
     );
-  }, [weapons, searchTerm]);
+
+    // Sort by character if selected
+    if (sortBy !== 'default') {
+      filtered = [...filtered].sort((a, b) => {
+        const aValue = a[sortBy.toLowerCase() as keyof WeaponScaling] as number;
+        const bValue = b[sortBy.toLowerCase() as keyof WeaponScaling] as number;
+        return bValue - aValue; // Sort descending (highest first)
+      });
+    }
+
+    return filtered;
+  }, [weapons, searchTerm, sortBy]);
 
   const tooltipContent = [
     "Tables shows weapon Attack Power at lv12 with no relics.",
@@ -70,8 +83,8 @@ export default function WeaponSearcher({ weapons }: WeaponSearcherProps) {
               </h2>
             </div>
 
-            {/* Centered search bar */}
-            <div className="flex-1 flex justify-center">
+            {/* Centered search bar with sort dropdown */}
+            <div className="flex-1 flex justify-center gap-2">
               <div className="relative w-full max-w-md">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
                 <input
@@ -81,6 +94,47 @@ export default function WeaponSearcher({ weapons }: WeaponSearcherProps) {
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="w-full pl-10 pr-4 py-2 bg-gray-900/80 border border-gray-700 rounded-lg focus:border-yellow-500 focus:outline-none text-white text-sm"
                 />
+              </div>
+              
+              {/* Sort dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => setShowSortDropdown(!showSortDropdown)}
+                  className="flex items-center gap-2 px-4 py-2 bg-gray-900/80 border border-gray-700 rounded-lg hover:border-yellow-500 transition-colors text-sm text-gray-300"
+                >
+                  <span>Sort: {sortBy === 'default' ? 'Default' : sortBy}</span>
+                  <ChevronDown size={16} />
+                </button>
+                
+                {showSortDropdown && (
+                  <div className="absolute top-full mt-1 right-0 bg-gray-900 border border-gray-700 rounded-lg shadow-lg z-50 min-w-[150px]">
+                    <button
+                      onClick={() => {
+                        setSortBy('default');
+                        setShowSortDropdown(false);
+                      }}
+                      className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-800 transition-colors ${
+                        sortBy === 'default' ? 'text-yellow-400' : 'text-gray-300'
+                      }`}
+                    >
+                      Default Order
+                    </button>
+                    {characterOrder.map(character => (
+                      <button
+                        key={character}
+                        onClick={() => {
+                          setSortBy(character);
+                          setShowSortDropdown(false);
+                        }}
+                        className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-800 transition-colors ${
+                          sortBy === character ? 'text-yellow-400' : 'text-gray-300'
+                        }`}
+                      >
+                        Best for {character}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
 
@@ -115,7 +169,7 @@ export default function WeaponSearcher({ weapons }: WeaponSearcherProps) {
       }`}>
         <div className="p-6">
           <div className="space-y-3 max-h-[600px] overflow-y-auto pr-2">
-            {filteredWeapons.map((weapon, index) => {
+            {filteredAndSortedWeapons.map((weapon, index) => {
               const scalingValues = characterOrder.map(char => 
                 weapon[char.toLowerCase() as keyof WeaponScaling] as number
               );
@@ -140,12 +194,15 @@ export default function WeaponSearcher({ weapons }: WeaponSearcherProps) {
                     {characterOrder.map((character) => {
                       const value = weapon[character.toLowerCase() as keyof WeaponScaling] as number;
                       const color = getScalingColor(value, scalingValues);
+                      const isHighlighted = sortBy === character;
                       
                       return (
                         <div key={character} className="text-center">
                           <div className="text-xs text-gray-400 mb-1">{character}</div>
                           <div 
-                            className="text-lg font-bold rounded px-2 py-1"
+                            className={`text-lg font-bold rounded px-2 py-1 ${
+                              isHighlighted ? 'ring-2 ring-yellow-400' : ''
+                            }`}
                             style={{ 
                               backgroundColor: `${color}20`,
                               color: color,
